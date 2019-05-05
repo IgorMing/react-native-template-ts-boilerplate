@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:import/typescript"
+  ],
+  "globals": {
+    "describe": true,
+    "it": true,
+    "fit": true,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true,
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".ts", ".tsx"] }
+    ],
+    "semi": ["error", "always"]
+  }
+}
