@@ -2,7 +2,7 @@ import React from 'react';
 
 import Wrapper from './style';
 
-export default () => {
+const Home = () => {
   return (
     <Wrapper.Container>
       <Wrapper.Text.Title>
@@ -14,3 +14,9 @@ export default () => {
     </Wrapper.Container>
   );
 };
+
+Home.navigationOptions = {
+  header: null
+};
+
+export default Home;
