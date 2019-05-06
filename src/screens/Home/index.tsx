@@ -1,11 +1,16 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+
+import Wrapper from './style';
 
 export default () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Welcome to React Native boilerplate!</Text>
-      <Text>This is to ensure the unit test is passing!</Text>
-    </View>
+    <Wrapper.Container>
+      <Wrapper.Text.Title>
+        Welcome to React Native boilerplate!
+      </Wrapper.Text.Title>
+      <Wrapper.Text.Description>
+        This is to ensure the unit test is passing!
+      </Wrapper.Text.Description>
+    </Wrapper.Container>
   );
 };
