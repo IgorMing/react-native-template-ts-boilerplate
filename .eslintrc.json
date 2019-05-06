@@ -10,9 +10,6 @@
     "plugin:import/typescript"
   ],
   "globals": {
-    "describe": true,
-    "it": true,
-    "fit": true,
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
