@@ -16,3 +16,54 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 ## TODO
 
 - [Babel Root Import](https://www.npmjs.com/package/babel-plugin-root-import)
+
+## Como instalar
+
+> Considero que você tem o React Native CLI já instalado em sua máquina. Caso não tenha, [clique aqui](https://facebook.github.io/react-native/docs/getting-started.html) para seguir a documentação oficial.
+
+Execute o comando abaixo:
+
+```
+react-native init <nomeDoProjeto> --template ts-boilerplate
+# troque "<nomeDoProjeto>" pelo nome que deseja nomear seu projeto, de fato
+```
+
+**IMPORTANTE:** Após concluirem todos os processos de inicialização, temos que apagar alguns arquivos que nosso boilerplate não utiliza, e o boilerplate generator do Facebook os cria, mesmo assim. (Infelizmente, pelo menos por enquanto, não achei uma forma de evitar a criação destes arquivos). Seguem abaixo os arquivos que devem ser deletados.
+
+- `./__tests__` (toda a pasta)
+- `./App.js` (este arquivo está como `App.jsx`, dentro do diretório `src`)
+
+Apague manualmente, ou apenas rode o comando, na pasta raiz do projeto:
+
+```
+rm -r __tests__ App.js
+```
+
+Pronto, agora você já pode aproveitar o boilerplate e usufruir de toda a configuração já concluída.
+
+## Como utilizar
+
+Agora teremos os comandos básicos versionados em scripts, dentro do `package.json`.
+
+Para rodar os testes básicos feitos, execute o comando:
+
+```
+yarn test
+# ou npm run test
+```
+
+Para inicializar o bundle, execute o comando:
+
+```
+yarn start
+# ou npm run start
+```
+
+Agora só fazer o boot para algum device físico, ou um emulador. Na forma mais simples, basta executar:
+
+```
+react-native run-android
+# ou react-native run-ios, caso use Mac
+```
+
+Divirta-se!
