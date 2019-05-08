@@ -7,14 +7,16 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorming/react-native-template-ts-boilerplate.git"
+  },
   "keywords": [
     "react-native",
     "template",
     "eslint",
     "react-navigation",
-    "reactotron",
-    "babel-root-import",
-    "axios"
+    "babel-root-import"
   ],
   "jest": {
     "preset": "react-native"
