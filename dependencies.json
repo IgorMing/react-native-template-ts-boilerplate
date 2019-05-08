@@ -1,7 +1,7 @@
 {
-  "react": "16.8.3",
-  "react-native": "0.59.5",
-  "react-native-gesture-handler": "^1.2.1",
-  "react-navigation": "^3.9.1",
-  "styled-components": "^4.2.0"
+  "react": "latest",
+  "react-native": "latest",
+  "react-native-gesture-handler": "latest",
+  "react-navigation": "latest",
+  "styled-components": "latest"
 }
