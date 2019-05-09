@@ -18,12 +18,12 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "useJSXTextNode": true,
-    "project": "./tsconfig.json",
+    "project": "../tsconfig.json",
+    "tsconfigRootDir": "src",
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "jsx-a11y", "import"],
   "rules": {
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],
@@ -32,5 +32,11 @@
       { "extensions": [".ts", ".tsx"] }
     ],
     "semi": ["error", "always"]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "babel-plugin-root-import": { "rootPathSuffix": "src" }
+    }
   }
 }
