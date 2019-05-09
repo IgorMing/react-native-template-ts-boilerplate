@@ -44,7 +44,30 @@ Apague manualmente, ou apenas rode o comando, na pasta raiz do projeto:
 rm -r __tests__ App.js .flowconfig
 ```
 
+> Lembrando que, só estou sugerindo a deleção da pasta `__tests__`, pois como pode ser visualizado abaixo, a estrutura de arquivos de testes seguem uma convenção diferente. Basicamente para facilitar a importação dos arquivos necessários, e uso dos mesmos.
+
 Pronto, agora você já pode aproveitar o boilerplate e usufruir de toda a configuração já concluída.
+
+## Estrutura do projeto
+
+```
+-> src
+  -> components (para componentes reutilizáveis)
+    -> Componente1
+      - index.tsx (arquivo principal)
+      - index.test.tsx (testes que referenciam este arquivo em questão)
+      - style.ts (onde fica concentrado todo o style, seja um StyleSheet ou um componente styled-components)
+  -> screens
+    -> Screen1
+      - index.tsx
+      - index.test.tsx
+      - style.ts
+  -> routes (concentrar as rotas do projeto nesta pasta)
+    - index.ts
+    - screen1Stack.ts
+    - screen2Stack.ts
+configFiles
+```
 
 ## Como utilizar
 

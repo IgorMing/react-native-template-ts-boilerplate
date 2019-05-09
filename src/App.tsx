@@ -1,4 +1,4 @@
-import React from 'react';
-import Routes from './Routes';
+import React from "react";
+import Routes from "./routes";
 
 export default () => <Routes />;
