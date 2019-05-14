@@ -9,6 +9,7 @@
   "@typescript-eslint/eslint-plugin": "latest",
   "@typescript-eslint/parser": "latest",
   "babel-jest": "latest",
+  "babel-plugin-root-import": "latest",
   "eslint": "latest",
   "eslint-config-airbnb": "latest",
   "eslint-config-prettier": "latest",
