@@ -21,6 +21,8 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 
 - [EditorConfig](https://editorconfig.org/) - Padronização de indentação para diferentes editores. Basta seu editor ter a extensão do EditorConfig instalada.
 
+- [Reactotron](https://github.com/infinitered/reactotron) - Consistente debugger para React Native, que trás informações pertinentes durante o desenvolvimento. Para instruções de instalação do app desktop, basta acessar [aqui](https://github.com/infinitered/reactotron/blob/master/docs/installing.md).
+
 ## Como instalar
 
 > Considero que você tem o React Native CLI já instalado em sua máquina. Caso não tenha, [clique aqui](https://facebook.github.io/react-native/docs/getting-started.html) para seguir a documentação oficial.
