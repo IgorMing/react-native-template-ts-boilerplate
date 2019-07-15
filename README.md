@@ -39,11 +39,12 @@ react-native init <nomeDoProjeto> --template ts-boilerplate
 - `.flowconfig` (já utilizamos Typescript, portanto, o flow nunca será necessário)
 - `./__tests__` (toda a pasta)
 - `./App.js` (este arquivo está como `App.jsx`, dentro do diretório `src`)
+- `.eslintrc.js` (já estamos usando o `.eslintrc.json`, idealmente por ser uma extensão onde temos autocomplete funcionando para o editor, diferentemente do `.js`)
 
 Apague manualmente, ou apenas rode o comando, na pasta raiz do projeto:
 
 ```
-rm -r __tests__ App.js .flowconfig
+rm -r __tests__ App.js .flowconfig .eslintrc.js
 ```
 
 > Lembrando que, só estou sugerindo a deleção da pasta `__tests__`, pois como pode ser visualizado abaixo, a estrutura de arquivos de testes seguem uma convenção diferente. Basicamente para facilitar a importação dos arquivos necessários, e uso dos mesmos.
@@ -95,5 +96,14 @@ Agora só fazer o boot para algum device físico, ou um emulador. Na forma mais 
 react-native run-android
 # ou react-native run-ios, caso use Mac
 ```
+
+**Possível erro de execução:** Caso note algum erro na biblioteca `react-native-gesture-handler`, faça os simples passos à seguir.
+
+- Abra o Android Studio com a raiz apontando para a pasta `/android`, dentro de seu projeto
+- Selecione a pasta do projeto `react-native-gesture-handler`, e clique com o botão direito do mouse
+- Vá na opção Refactor > Migrate to AndroidX
+- Confirme as mudanças
+
+Pronto, agora você já consegue executar seu projeto normalmente.
 
 Divirta-se!
