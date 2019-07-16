@@ -26,8 +26,10 @@
   },
   "plugins": ["react", "@typescript-eslint", "jsx-a11y", "import"],
   "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],
+    "no-unused-vars": "off",
     "react/jsx-filename-extension": [
       "error",
       { "extensions": [".ts", ".tsx"] }
