@@ -1,20 +1,25 @@
-import React from "react";
-import { YellowBox } from "react-native";
-import Routes from "./routes";
+import 'react-native-gesture-handler';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components';
 
-/**
- * Remove this line below after this issue be solved, and an update
- * be released from reactotron library
- * issue link: https://github.com/infinitered/reactotron/issues/996
- */
-YellowBox.ignoreWarnings([
-  "Warning: Async Storage has been extracted from react-native core"
-]);
+import Navigator from './root-navigator';
+import store from './store';
+import theme from './commons/styled-components/theme';
 
-if (__DEV__) {
-  import("../reactotron.config").then(() =>
-    console.log("Reactotron Configured")
+const App = () => {
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <StatusBar
+          barStyle={theme.statusBar?.content}
+          backgroundColor={theme.statusBar?.background}
+        />
+        <Navigator />
+      </ThemeProvider>
+    </Provider>
   );
-}
+};
 
-export default () => <Routes />;
+export default App;
