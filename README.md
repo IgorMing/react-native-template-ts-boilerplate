@@ -4,7 +4,7 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 
 ## Ferramentas configuradas
 
-- [Redux]() - Famoso, e fortemente utilizado para gerenciamento de estado dentro de projetos escaláveis.
+- [Redux](https://redux.js.org/) - Famoso, e fortemente utilizado para gerenciamento de estado dentro de projetos escaláveis.
 
   - **Informação importante:** O uso de Redux não é obrigatório! Caso não seja crucial pra você, pode remover esta biblioteca e adaptar a estrutura sugerida.
   - Temos outras formas de gerenciar e compartilhar o estado da aplicação. Como [MobX](https://mobx.js.org/) e outras bibliotecas "redux like". Mas o uso correto da [New Context API](https://pt-br.reactjs.org/docs/context.html) pode tornar o uso de Redux não tão crucial.
@@ -31,7 +31,7 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 Execute o comando abaixo:
 
 ```
-react-native init <nomeDoProjeto> --template ts-boilerplate
+react-native init <nomeDoProjeto> --template react-native-template-ts-boilerplate
 # troque "<nomeDoProjeto>" pelo nome que deseja nomear seu projeto, de fato
 ```
 
