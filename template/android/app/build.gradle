@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.tsdefault"
+        applicationId "com.tsboilerplate"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
