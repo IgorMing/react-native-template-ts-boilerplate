@@ -4,9 +4,14 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 
 ## Ferramentas configuradas
 
-- [React Navigation](https://reactnavigation.org/) - Biblioteca responsável pela navegação do projeto.
+- [Redux]() - Famoso, e fortemente utilizado para gerenciamento de estado dentro de projetos escaláveis.
 
-- [Styled Components](https://www.styled-components.com/) - Responsável pela estilização do projeto.
+  - **Informação importante:** O uso de Redux não é obrigatório! Caso não seja crucial pra você, pode remover esta biblioteca e adaptar a estrutura sugerida.
+  - Temos outras formas de gerenciar e compartilhar o estado da aplicação. Como [MobX](https://mobx.js.org/) e outras bibliotecas "redux like". Mas o uso correto da [New Context API](https://pt-br.reactjs.org/docs/context.html) pode tornar o uso de Redux não tão crucial.
+
+- [React Navigation](https://reactnavigation.org/) - Navegação. Caso performance seja um detalhe crucial, vale dar uma olhada na biblioteca [react-native-navigation](https://github.com/wix/react-native-navigation).
+
+- [Styled Components](https://www.styled-components.com/) - Framework para estilização.
 
   - Em minha opinião, a melhor ferramenta para style numa aplicação React/React Native.
 
@@ -18,10 +23,6 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 
   - Partindo da pasta `./src` do projeto. Ao invés de fazer `../../components/MeuComponente`, você acessa-o direto do import absoluto, utilizando `~/components/MeuComponente`. Uma feature incrivelmente útil, principalmente quando o projeto vai crescendo, e começamos à ficar com enormes cadeias de `../../../` por todo o projeto.
   - Seu editor também terá o Intellisense te sugerindo autocompletes corretamente também. A configuração já inclui isso.
-
-- [EditorConfig](https://editorconfig.org/) - Padronização de indentação para diferentes editores. Basta seu editor ter a extensão do EditorConfig instalada.
-
-- [Reactotron](https://github.com/infinitered/reactotron) - Consistente debugger para React Native, que trás informações pertinentes durante o desenvolvimento. Para instruções de instalação do app desktop, basta acessar [aqui](https://github.com/infinitered/reactotron/blob/master/docs/installing.md).
 
 ## Como instalar
 
@@ -39,15 +40,16 @@ react-native init <nomeDoProjeto> --template ts-boilerplate
 - `.flowconfig` (já utilizamos Typescript, portanto, o flow nunca será necessário)
 - `./__tests__` (toda a pasta)
 - `./App.js` (este arquivo está como `App.jsx`, dentro do diretório `src`)
-- `.eslintrc.js` (já estamos usando o `.eslintrc.json`, idealmente por ser uma extensão onde temos autocomplete funcionando para o editor, diferentemente do `.js`)
+
+> **.eslintrc.js(json)** - Para ter melhores resultados do intellisense do editor no arquivo `.eslintrc.js`, você tem a opção de mudar sua estrutura para um arquivo `.json`. Dica boa, caso isso seja importante para você.
 
 Apague manualmente, ou apenas rode o comando, na pasta raiz do projeto:
 
 ```
-rm -r __tests__ App.js .flowconfig .eslintrc.js
+rm -r __tests__ App.js .flowconfig
 ```
 
-> Lembrando que, só estou sugerindo a deleção da pasta `__tests__`, pois como pode ser visualizado abaixo, a estrutura de arquivos de testes seguem uma convenção diferente. Basicamente para facilitar a importação dos arquivos necessários, e uso dos mesmos.
+> Lembrando que, só estou sugerindo a deleção da pasta `__tests__`, pois como pode ser visualizado abaixo, a estrutura de arquivos de testes seguem uma convenção diferente (mais conhecida como [duck](https://github.com/erikras/ducks-modular-redux) proposal/pattern). Basicamente para facilitar a importação dos arquivos necessários, e uso dos mesmos.
 
 Pronto, agora você já pode aproveitar o boilerplate e usufruir de toda a configuração já concluída.
 
@@ -55,33 +57,35 @@ Pronto, agora você já pode aproveitar o boilerplate e usufruir de toda a confi
 
 ```
 -> src
+  -> commons (quando não são componentes, e devem ser reutilizáveis)
   -> components (para componentes reutilizáveis)
     -> Componente1
       - index.tsx (arquivo principal)
       - index.test.tsx (testes que referenciam este arquivo em questão)
-      - style.ts (onde fica concentrado todo o style, seja um StyleSheet ou um componente styled-components)
+      - styles.ts (onde fica concentrado todo o style, seja um StyleSheet ou um componente styled-components)
   -> screens
-    -> Screen1
-      - index.tsx
-      - index.test.tsx
-      - style.ts
-  -> routes (concentrar as rotas do projeto nesta pasta)
-    - index.ts
-    - screen1Stack.ts
-    - screen2Stack.ts
+    -> Authenticated
+      -> Screen1 (e.g.: Home screen)
+        - index.tsx
+        - index.test.tsx
+        - styles.ts
+        - <navigator_type>-navigator.tsx
+    -> Not Authenticated
+      -> Screen2 (e.g.: Signin screen)
+        - index.tsx
+        - index.test.tsx
+        - styles.ts
+        - <navigator_type>-navigator.tsx
+  - App.tsx (Componente raíz)
+  - reducers.ts
+  - root-navigator.tsx (para as rotas raíz/iniciais)
+  - store.ts
 configFiles
 ```
 
 ## Como utilizar
 
 Agora teremos os comandos básicos versionados em scripts, dentro do `package.json`.
-
-Para rodar os testes básicos feitos, execute o comando:
-
-```
-yarn test
-# ou npm run test
-```
 
 Para inicializar o bundle, execute o comando:
 
@@ -93,17 +97,8 @@ yarn start
 Agora só fazer o boot para algum device físico, ou um emulador. Na forma mais simples, basta executar:
 
 ```
-react-native run-android
-# ou react-native run-ios, caso use Mac
+npx react-native run-android
+# ou npx react-native run-ios, caso use Mac
 ```
-
-**Possível erro de execução:** Caso note algum erro na biblioteca `react-native-gesture-handler`, faça os simples passos à seguir.
-
-- Abra o Android Studio com a raiz apontando para a pasta `/android`, dentro de seu projeto
-- Selecione a pasta do projeto `react-native-gesture-handler`, e clique com o botão direito do mouse
-- Vá na opção Refactor > Migrate to AndroidX
-- Confirme as mudanças
-
-Pronto, agora você já consegue executar seu projeto normalmente.
 
 Divirta-se!
