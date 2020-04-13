@@ -1,6 +1,7 @@
 {
   "name": "react-native-template-ts-boilerplate",
   "version": "0.0.0",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "android": "react-native run-android",
