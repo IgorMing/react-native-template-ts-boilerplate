@@ -35,22 +35,6 @@ react-native init <nomeDoProjeto> --template ts-boilerplate
 # troque "<nomeDoProjeto>" pelo nome que deseja nomear seu projeto, de fato
 ```
 
-**IMPORTANTE:** Após concluirem todos os processos de inicialização, temos que apagar alguns arquivos que nosso boilerplate não utiliza, e o boilerplate generator do Facebook os cria, mesmo assim. (Infelizmente, pelo menos por enquanto, não achei uma forma de evitar a criação destes arquivos). Seguem abaixo os arquivos que devem ser deletados.
-
-- `.flowconfig` (já utilizamos Typescript, portanto, o flow nunca será necessário)
-- `./__tests__` (toda a pasta)
-- `./App.js` (este arquivo está como `App.jsx`, dentro do diretório `src`)
-
-> **.eslintrc.js(json)** - Para ter melhores resultados do intellisense do editor no arquivo `.eslintrc.js`, você tem a opção de mudar sua estrutura para um arquivo `.json`. Dica boa, caso isso seja importante para você.
-
-Apague manualmente, ou apenas rode o comando, na pasta raiz do projeto:
-
-```
-rm -r __tests__ App.js .flowconfig
-```
-
-> Lembrando que, só estou sugerindo a deleção da pasta `__tests__`, pois como pode ser visualizado abaixo, a estrutura de arquivos de testes seguem uma convenção diferente (mais conhecida como [duck](https://github.com/erikras/ducks-modular-redux) proposal/pattern). Basicamente para facilitar a importação dos arquivos necessários, e uso dos mesmos.
-
 Pronto, agora você já pode aproveitar o boilerplate e usufruir de toda a configuração já concluída.
 
 ## Estrutura do projeto
