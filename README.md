@@ -31,7 +31,7 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 Execute o comando abaixo:
 
 ```
-react-native init <nomeDoProjeto> --template react-native-template-ts-boilerplate
+npx react-native init <nomeDoProjeto> --template react-native-template-ts-boilerplate
 # troque "<nomeDoProjeto>" pelo nome que deseja nomear seu projeto, de fato
 ```
 
