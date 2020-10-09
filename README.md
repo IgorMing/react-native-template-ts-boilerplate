@@ -28,43 +28,42 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 
 > Considero que você tem o React Native CLI já instalado em sua máquina. Caso não tenha, [clique aqui](https://facebook.github.io/react-native/docs/getting-started.html) para seguir a documentação oficial.
 
-Execute o comando abaixo:
+Execute o comando abaixo, substituindo `<nomeDoProjeto>` pelo nome desejado:
 
-```
-npx react-native init <nomeDoProjeto> --template react-native-template-ts-boilerplate
-# troque "<nomeDoProjeto>" pelo nome que deseja nomear seu projeto, de fato
+```shell
+$ npx react-native init <nomeDoProjeto> --template react-native-template-ts-boilerplate
 ```
 
 Pronto, agora você já pode aproveitar o boilerplate e usufruir de toda a configuração já concluída.
 
+> **Renomear pastas**: Indico seguir os passos da biblioteca [react-native-rename](https://www.npmjs.com/package/react-native-rename) para renomear, de fato, todas as pastas internas com o nome correto. _(assim evitaremos ter pastas com nome `TSBoilerplate` dentro de seu projeto)_
+
 ## Estrutura do projeto
 
 ```
--> src
-  -> commons (quando não são componentes, e devem ser reutilizáveis)
-  -> components (para componentes reutilizáveis)
-    -> Componente1
-      - index.tsx (arquivo principal)
-      - index.test.tsx (testes que referenciam este arquivo em questão)
-      - styles.ts (onde fica concentrado todo o style, seja um StyleSheet ou um componente styled-components)
-  -> screens
-    -> Authenticated
-      -> Screen1 (e.g.: Home screen)
-        - index.tsx
-        - index.test.tsx
-        - styles.ts
-        - <navigator_type>-navigator.tsx
-    -> Not Authenticated
-      -> Screen2 (e.g.: Signin screen)
-        - index.tsx
-        - index.test.tsx
-        - styles.ts
-        - <navigator_type>-navigator.tsx
-  - App.tsx (Componente raíz)
-  - reducers.ts
-  - root-navigator.tsx (para as rotas raíz/iniciais)
-  - store.ts
-configFiles
+📦src
+ ┣ 📂commons (quando não são componentes, e devem ser reutilizáveis)
+ ┣ 📂components (para componentes reutilizáveis)
+ ┣ 📂modules (módulos com lógica de negócio/duck files)
+ ┣ 📂screens
+ ┃ ┣ 📂Authenticated
+ ┃ ┃ ┣ 📂Home
+ ┃ ┃ ┃ ┣ 📜index.tsx (arquivo principal, que contém a view)
+ ┃ ┃ ┃ ┣ 📜stack-navigator.tsx (caso sua raiz seja um navigator)
+ ┃ ┃ ┃ ┣ 📜styles.ts (onde fica todo o style do componente)
+ ┃ ┃ ┃ ┗ 📜types.ts (todos os tipos pertencentes à esta tela)
+ ┃ ┃ ┗ 📜bottom-tab-navigator.tsx
+ ┃ ┗ 📂NotAuthenticated
+ ┃ ┃ ┣ 📂Signin
+ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📜styles.ts
+ ┃ ┃ ┣ 📂Signup
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜stack-navigator.tsx
+ ┣ 📜App.tsx (componente principal, onde ficam os providers)
+ ┣ 📜reducers.ts (onde ficam os reducers combinados)
+ ┣ 📜root-navigator.tsx (rotas raíz do projeto)
+ ┗ 📜store.ts (configuração da redux store)
 ```
 
 ## Como utilizar
@@ -73,16 +72,30 @@ Agora teremos os comandos básicos versionados em scripts, dentro do `package.js
 
 Para inicializar o bundle, execute o comando:
 
-```
-yarn start
-# ou npm run start
+```shell
+$ yarn start
 ```
 
 Agora só fazer o boot para algum device físico, ou um emulador. Na forma mais simples, basta executar:
 
+### Android
+
+```shell
+$ npx react-native run-android
 ```
-npx react-native run-android
-# ou npx react-native run-ios, caso use Mac
+
+### iOS
+
+Primeiramente, vamos instalar os pods do projeto
+
+```shell
+$ npx pod-install
+```
+
+Agora podemos fazer o launch, com o comando:
+
+```shell
+$ npx react-native run-ios
 ```
 
 Divirta-se!
