@@ -13,16 +13,23 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 
   - Ao invés de retornar diretamente um objeto de action, seus action creators podem retornar uma função, conforme snippet abaixo
   
-  ```diff
-  - return {
-  -  type: <type>,
-  -  payload: <value>
-  - };
-  + return async (dispatch: Dispatch, getState: GetState) => {
-  +   const response = await http.get('...');
-  +   dispatch({ type: <type>, payload: <value> });
-  +};
+  ao invés de:
+  ```js
+  return {
+    type: 'type',
+    payload: { /* any value as payload */ }
+  };
   ```
+
+  podemos usar assim (**também**. A forma anterior segue funcionando):
+  ```js
+  return async (dispatch: Dispatch, getState: GetState) => {
+    const response = await http.get('...');
+    dispatch({
+      type: 'type',
+      payload: { /* any value as payload */ }
+    });
+  };
 
 - [React Navigation](https://reactnavigation.org/) - Navegação. Caso performance seja um detalhe crucial, vale dar uma olhada na biblioteca [react-native-navigation](https://github.com/wix/react-native-navigation).
 
