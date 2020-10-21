@@ -49,7 +49,7 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 - [Reactotron](https://github.com/infinitered/reactotron) - Ferramenta para debug
 
   - Lembrando que para utilização deste recurso, é necessária a [instalação da aplicação](https://github.com/infinitered/reactotron/blob/master/docs/installing.md)
-  - O redux e o redux-thunk também
+  - Os valores trabalhados entre redux/redux-thunk são disponibilizados na aplicação, podendo ver todo o state da aplicação, e nós específicos também
 
 ## Como instalar
 
