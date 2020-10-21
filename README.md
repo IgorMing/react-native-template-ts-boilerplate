@@ -14,7 +14,7 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
   - Ao invés de retornar diretamente um objeto de action, seus action creators podem retornar uma função, conforme snippet abaixo
   
   ao invés de:
-  ```js
+  ```ts
   return {
     type: 'type',
     payload: { /* any value as payload */ }
@@ -22,7 +22,7 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
   ```
 
   podemos usar assim (**também**. A forma anterior segue funcionando):
-  ```js
+  ```ts
   return async (dispatch: Dispatch, getState: GetState) => {
     const response = await http.get('...');
     dispatch({
