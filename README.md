@@ -12,24 +12,31 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Middleware para requisições assíncronas, utilizando `async/await`
 
   - Ao invés de retornar diretamente um objeto de action, seus action creators podem retornar uma função, conforme snippet abaixo
-  
+
   ao invés de:
+
   ```ts
   return {
-    type: 'type',
-    payload: { /* any value as payload */ }
+    type: "type",
+    payload: {
+      /* any value as payload */
+    },
   };
   ```
 
   podemos usar assim (**também**. A forma anterior segue funcionando):
+
   ```ts
   return async (dispatch: Dispatch, getState: GetState) => {
-    const response = await http.get('...');
+    const response = await http.get("...");
     dispatch({
-      type: 'type',
-      payload: { /* any value as payload */ }
+      type: "type",
+      payload: {
+        /* any value as payload */
+      },
     });
   };
+  ```
 
 - [React Navigation](https://reactnavigation.org/) - Navegação. Caso performance seja um detalhe crucial, vale dar uma olhada na biblioteca [react-native-navigation](https://github.com/wix/react-native-navigation).
 
@@ -108,7 +115,7 @@ Agora só fazer o boot para algum device físico, ou um emulador. Na forma mais 
 ### Android
 
 ```shell
-$ npx react-native run-android
+$ yarn android
 ```
 
 ### iOS
@@ -122,7 +129,7 @@ $ npx pod-install
 Agora podemos fazer o launch, com o comando:
 
 ```shell
-$ npx react-native run-ios
+$ yarn ios
 ```
 
 Divirta-se!
