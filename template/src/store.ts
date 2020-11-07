@@ -1,6 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import rootReducer from './reducers';
-import reactotron from '../reactotron.config';
+import { applyMiddleware, createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
+import rootReducer from "./reducers";
 
-export default createStore(rootReducer, compose(applyMiddleware(thunkMiddleware), reactotron.createEnhancer()));
+const middlewares = [thunkMiddleware];
+
+if (__DEV__) {
+  const createDebugger = require("redux-flipper").default;
+  middlewares.push(createDebugger());
+}
+
+export default createStore(rootReducer, applyMiddleware(...middlewares));

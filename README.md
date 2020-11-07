@@ -53,10 +53,10 @@ Um projeto baseado inicialmente no template `typescript` que temos para react na
   - Partindo da pasta `./src` do projeto. Ao invés de fazer `../../components/MeuComponente`, você acessa-o direto do import absoluto, utilizando `~/components/MeuComponente`. Uma feature incrivelmente útil, principalmente quando o projeto vai crescendo, e começamos à ficar com enormes cadeias de `../../../` por todo o projeto.
   - Seu editor também terá o IntelliSense te sugerindo autocompletes corretamente também. A configuração já inclui isso.
 
-- [Reactotron](https://github.com/infinitered/reactotron) - Ferramenta para debug
+- [Flipper](https://fbflipper.com/) - Ferramenta para debug
 
-  - Lembrando que para utilização deste recurso, é necessária a [instalação da aplicação](https://github.com/infinitered/reactotron/blob/master/docs/installing.md)
-  - Os valores presentes na store do redux são facilmente visualizados na aplicação do reactotron
+  - Lembrando que para utilização deste recurso, é necessária a instalação da aplicação desktop, como pode ser visto na documentação oficial
+  - Seguir também as [instruções da extensão com redux](https://github.com/jk-gan/redux-flipper) para que a aplicação desktop funcione de acordo
 
 ## Como instalar
 
