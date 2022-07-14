@@ -1,4 +1,4 @@
-# TS Boilerplate
+# TS Boilerplate (Deprecated)
 
 Um projeto baseado inicialmente no template `typescript` que temos para react native, porém, com algumas configurações extra que na grande maioria das vezes fará sentido serem configuradas. Aqui, já teremos tudo pronto.
 
