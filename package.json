@@ -1,6 +1,6 @@
 {
   "name": "react-native-template-ts-boilerplate",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "licenses": [
     {
       "type": "MIT"
@@ -19,7 +19,8 @@
     "react-native",
     "typescript",
     "styled-components",
-    "redux",
+    "absolute-import",
+    "zustand",
     "template",
     "boilerplate"
   ],

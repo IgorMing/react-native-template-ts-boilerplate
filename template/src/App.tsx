@@ -1,25 +1,29 @@
-import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Provider } from 'react-redux';
-import { StatusBar } from 'react-native';
-import { ThemeProvider } from 'styled-components';
+import BottomTab from './screens/Authenticated/BottomTab';
+import DetailsScreen from './screens/Authenticated/Details';
+import SigninScreen from './screens/Public/Signin';
+import { useAuthStore } from './stores/Auth';
+import { RootStackParams } from './types';
 
-import Navigator from './root-navigator';
-import store from './store';
-import theme from './commons/styled-components/theme';
+const Stack = createNativeStackNavigator<RootStackParams>();
 
-const App = () => {
+function App(): JSX.Element {
+  const { isLoggedIn } = useAuthStore();
+
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <StatusBar
-          barStyle={theme.statusBar?.content}
-          backgroundColor={theme.statusBar?.background}
-        />
-        <Navigator />
-      </ThemeProvider>
-    </Provider>
+    <NavigationContainer>
+      {isLoggedIn ? (
+        <BottomTab />
+      ) : (
+        <Stack.Navigator>
+          <Stack.Screen name="Signin" component={SigninScreen} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+        </Stack.Navigator>
+      )}
+    </NavigationContainer>
   );
-};
+}
 
 export default App;
