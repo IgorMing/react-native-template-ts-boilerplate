@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.tsboilerplate"
+    namespace "com.member"
     defaultConfig {
-        applicationId "com.tsboilerplate"
+        applicationId "com.member"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

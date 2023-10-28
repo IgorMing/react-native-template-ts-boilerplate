@@ -1,4 +1,4 @@
-package com.tsboilerplate;
+package com.member;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
