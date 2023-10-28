@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import BottomTab from './screens/Authenticated/BottomTab';
+import BottomTabNavigator from './screens/Authenticated/BottomTabNavigator';
 import DetailsScreen from './screens/Authenticated/Details';
 import SigninScreen from './screens/Public/Signin';
 import { useAuthStore } from './stores/Auth';
@@ -15,7 +15,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       {isLoggedIn ? (
-        <BottomTab />
+        <BottomTabNavigator />
       ) : (
         <Stack.Navigator>
           <Stack.Screen name="Signin" component={SigninScreen} />
