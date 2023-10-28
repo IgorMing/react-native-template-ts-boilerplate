@@ -87,8 +87,10 @@ Nem preciso dizer que é tudo estritamente opcional. Independente do caminho, s�
 
 Primeiramente, indico fortemente o uso do [pnpm](https://pnpm.io/). Ganha muito em performance e em uso de disco. Mas fique à vontade para rodar tudo em `npm` diretamente. (pode usar `yarn` também, mas eu parei de utilizar já há algum tempo...)
 
-Caso queira instalar o pnpm, lembre-se de criar um arquivo `.npmrc` na raíz do projeto, contendo o seguinte texto: `node-linker=hoisted`.
-Isso é feito para o pnpm instalar as dependências de forma flat, ou seja, pastas individuais, ao invés de agrupadas (igual seria, sem este arquivo presente). Tive problemas de configuração com algumas dependências, devido à esta alteração na estrutura do `node_modules`. Portanto, esta me pareceu a saída mais fácil e direta. _(Fique à vontade para sugerir melhorias...)_
+Caso queira utilizar o `pnpm`, lembre-se de alterar o arquivo `_npmrc` para `.npmrc` na raíz do projeto.
+Se for utilizar `yarn` ou `npm`, pode apagar o arquivo `_npmrc` sem problemas.
+
+> Isso é feito para o pnpm instalar as dependências de forma flat, ou seja, pastas individuais, ao invés de agrupadas (igual seria, sem este arquivo presente). Tive problemas de configuração com algumas dependências, devido à esta alteração na estrutura do `node_modules`. Portanto, esta me pareceu a saída mais fácil e direta. _(Fique à vontade para sugerir melhorias...)_
 
 Instale o pnpm via brew
 
