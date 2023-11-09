@@ -119,7 +119,7 @@ $ pnpx pod-install # ou npx pod-install
 Agora basta dar start, e, depois de carregar, apertar a tecla `i`, que um emulador iOS será aberto.
 
 ```shell
-$ npm start
+$ pnpm start
 ```
 
 ### Android
@@ -127,7 +127,7 @@ $ npm start
 Para Android, faça o start diretamente
 
 ```shell
-$ npm start
+$ pnpm start
 ```
 
 Agora basta pressionar `a`, que o script dará launch num emulador Android configurado.
