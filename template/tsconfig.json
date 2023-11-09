@@ -1,6 +1,12 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
